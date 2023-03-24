@@ -1,5 +1,5 @@
 const Contacts = () => {
-	[
+	const contacts = [
 		{
 			id: 1,
 			first_name: "Alane",
@@ -92,7 +92,13 @@ const Contacts = () => {
 	];
 	return (
 		<div>
-			<p>I am the Contacts component</p>
+			<ul>
+				{contacts.map((contacts) => (
+					<li key={contacts.id}>
+						{contacts.last_name}, {contacts.first_name}
+					</li>
+				))}
+			</ul>
 		</div>
 	);
 };
